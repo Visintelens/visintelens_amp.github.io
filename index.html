@@ -2,11 +2,10 @@
     <html ⚡ lang="en">
     <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <title>AMP сайт</title>
     <link rel="canonical" href="./regular-html-version.html" />
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <style amp-custom>
@@ -21,26 +20,7 @@
             height: 100%;
         }
     
-        header{
-            position: relative;
-            width: 100%;
-            min-height: 750px;
-            background-position: top;
-            z-index: 100;
-            color: #fff;
-        }   
-        header a{
-            color: inherit;
-            text-decoration: none;
-
-        }
-        header span{
-            color: #66697e;
-        }
-        .head-name{
-                font-family: RalewayRegular;
-        }
-        header::before{
+        /* header::before{
             content: '';
             position: absolute;
             top: -430px;
@@ -50,8 +30,34 @@
             z-index: 1;
             background-image: url(../images/masthead.png);
 
+        } */
+        .head-background{
+            position: absolute;
+            top: -430px;
+            left: -130px;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
         }
-
+        header{
+            position: relative;
+            width: 100%;
+            min-height: 750px;
+            z-index: 100;
+            color: #fff;
+        } 
+        header a{
+            color: inherit;
+            text-decoration: none;
+        }
+        header span{
+            position: relative;
+            z-index: 5;
+            color: #66697e;
+        }
+        .head-name{
+            font-family: RalewayRegular;
+        }
         header::after{
             content: '';
             position: absolute;
@@ -134,10 +140,14 @@
         }
 
         .features{
+            position: relative;
+            z-index: 100;
+            width: 100%;;
+            background-color: #fff;
             display: flex;
             min-height: 700px;
             justify-content: center;
-        }
+        }   
         .features_table{
             display: flex;
             flex-direction: row;
@@ -846,6 +856,7 @@
     </head>
     <body>
         <header>
+            <amp-img class='head-background' src="./images/masthead.png" alt="1" width="2160" height="1439" layout="responsive"></amp-img>
             <div class="container">
                 <div class="header-menu">
                     <nav class="nav">
@@ -1100,7 +1111,5 @@
                 </div>
             </footer>
         </main>
-
-        
     </body>
     </html>
